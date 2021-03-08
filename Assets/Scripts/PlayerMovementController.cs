@@ -43,11 +43,20 @@ public class PlayerMovementController : MonoBehaviour
         {
             deltaTouchPos = Input.mousePosition - firstTouchPos;
             direction = new Vector3(deltaTouchPos.x, 0f, deltaTouchPos.y);
+            Debug.Log(direction+"direction");
 
             Vector3 moveForward = new Vector3(0f, 0f, direction.z).normalized;
             Vector3 moveRotate = new Vector3( 0f, direction.x, 0f).normalized;
 
-            transform.Translate(moveForward * moveSpeed * Time.deltaTime);
+
+            if(Mathf.Abs(deltaTouchPos.y) >= range * .5)
+            {
+                if(deltaTouchPos.y > 0)
+                {
+                    transform.Translate(moveForward * moveSpeed * Time.deltaTime);
+
+                }
+            }
 
             if (Mathf.Abs(deltaTouchPos.x) >= range)
             {
