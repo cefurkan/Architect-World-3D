@@ -6,6 +6,7 @@ public class PlayerCollectController : MonoBehaviour
 {
     [SerializeField]
     private int collectedWoodCount;
+    private int axePower = 1;
     private bool isCurrentTreeFinished;
     private TreeManager currentTree;
 
@@ -46,7 +47,7 @@ public class PlayerCollectController : MonoBehaviour
         while (!isCurrentTreeFinished && currentTree!=null)
         {
             collectedWoodCount++;
-            currentTree.DecreaseWoodCount();
+            currentTree.DecreaseWoodCount(axePower);
 
             if (currentTree.isTreeFinished)
             {

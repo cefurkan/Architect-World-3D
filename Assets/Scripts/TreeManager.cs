@@ -7,15 +7,17 @@ public class TreeManager : MonoBehaviour
     private int treeWoodCount = 5;
     public bool isTreeFinished;
 
+// 13. satırdaki kodun aynısını yapıyor.    
+    public int TreeWoodCount { get { return treeWoodCount; } }
 
-    public int GetTreeWoodCount()
-    {
-        return treeWoodCount;
-    }
+    //public int TsreeWoodCount()
+    //{
+    //    return treeWoodCount;
+    //}
 
-    public void DecreaseWoodCount()
+    public void DecreaseWoodCount(int decreaseAmount)
     {
-        treeWoodCount--;
+        treeWoodCount-= decreaseAmount;
         if (treeWoodCount == 0)
         {
             isTreeFinished = true;

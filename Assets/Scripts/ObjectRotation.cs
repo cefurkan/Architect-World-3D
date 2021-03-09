@@ -25,7 +25,6 @@ public class ObjectRotation : MonoBehaviour
 
         rb.AddForce((transform.position - planet.position).normalized * gravity * 100f);
 
-
         //RaycastHit hit;
         //if (Physics.Raycast(transform.position, -(transform.position - planet.transform.position), out hit))
         //{
