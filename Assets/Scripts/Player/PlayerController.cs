@@ -19,6 +19,8 @@ public class PlayerController : MonoBehaviour
     Vector3 deltaTouchPos = Vector3.zero;
     Vector3 direction = Vector3.zero;
 
+    public Animator Anim;
+
     public ResourcesSO wood;
 
     [SerializeField]
@@ -32,7 +34,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         Move();
-
+        Anim.SetFloat("MoveSpeed", direction.z);
     }
 
     private void Move()
@@ -53,13 +55,19 @@ public class PlayerController : MonoBehaviour
             if (Mathf.Abs(deltaTouchPos.y) >= range * .5)
             {
                 transform.Translate(moveForward * moveSpeed * Time.deltaTime);
+                Anim.SetBool("Run",true);
             }
-
             if (Mathf.Abs(deltaTouchPos.x) >= range)
             {
                 transform.Rotate(moveRotate * moveRotateSpeed * Time.deltaTime);
             }
         }
+        else
+        {
+            Anim.SetBool("Run", false);
+        }
+
+        
     }
 }
   

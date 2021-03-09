@@ -11,6 +11,8 @@ public class Axe : MonoBehaviour
     private float power = .5f;
 
     private TreeManager currentTree;
+
+    public Animator AxeAnim;
     private void Awake()
     {
         // İleride Axe'ı Scriptable Objectden farklı itemlarla çekebiliriz,
@@ -74,7 +76,8 @@ public class Axe : MonoBehaviour
                 break;
             }
             Debug.Log("vurdum" + currentTree.TreeWoodCount);
-            
+
+            AxeAnim.SetTrigger("Melee");
             yield return new WaitForSeconds(speed);
 
         }
