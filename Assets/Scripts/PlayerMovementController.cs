@@ -43,38 +43,35 @@ public class PlayerMovementController : MonoBehaviour
         {
             deltaTouchPos = Input.mousePosition - firstTouchPos;
             direction = new Vector3(deltaTouchPos.x, 0f, deltaTouchPos.y);
-          //  Debug.Log(direction+"direction");
+            //  Debug.Log(direction+"direction");
 
             Vector3 moveForward = new Vector3(0f, 0f, direction.z).normalized;
-            Vector3 moveRotate = new Vector3( 0f, direction.x, 0f).normalized;
+            Vector3 moveRotate = new Vector3(0f, direction.x, 0f).normalized;
 
 
-            if(Mathf.Abs(deltaTouchPos.y) >= range * .5)
+            if (Mathf.Abs(deltaTouchPos.y) >= range * .5)
             {
-                if(deltaTouchPos.y > 0)
-                {
-                    transform.Translate(moveForward * moveSpeed * Time.deltaTime);
+                transform.Translate(moveForward * moveSpeed * Time.deltaTime);
 
-                }
             }
 
             if (Mathf.Abs(deltaTouchPos.x) >= range)
             {
                 transform.Rotate(moveRotate * moveRotateSpeed * Time.deltaTime);
             }
-            
-          
-
-           body.AddForce((this.transform.position - planet.position).normalized * gravity);
-           
-           transform.rotation = Quaternion.Slerp(transform.rotation,
-               Quaternion.FromToRotation(transform.up,
-                (transform.position-planet.position).normalized)*transform.rotation,rotateSpeed * Time.deltaTime);
 
 
 
-         
-           
+            body.AddForce((this.transform.position - planet.position).normalized * gravity);
+
+            transform.rotation = Quaternion.Slerp(transform.rotation,
+                Quaternion.FromToRotation(transform.up,
+                 (transform.position - planet.position).normalized) * transform.rotation, rotateSpeed * Time.deltaTime);
+
+
+
+
+
         }
         else
         {
