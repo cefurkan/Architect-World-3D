@@ -8,6 +8,8 @@ public class TreeManager : MonoBehaviour
     private float treeWoodCount = 5;
     public bool isTreeFinished;
 
+   
+
 // 13. satırdaki kodun aynısını yapıyor.    
     public float TreeWoodCount { get { return treeWoodCount; } }
 
@@ -24,7 +26,7 @@ public class TreeManager : MonoBehaviour
         if (treeWoodCount == 0)
         {
             isTreeFinished = true;
-            DestroyFinishedTree();
+            DisableAndRefreshAfterDelay(5f);
         }
     }
 
@@ -32,5 +34,29 @@ public class TreeManager : MonoBehaviour
     {
         gameObject.SetActive(false);
     }
+    private void DisableAndRefreshAfterDelay(float delay)
+    {
+        StartCoroutine(CR_DisableAndRefreshAfterDelay(delay));
+    }
+    private IEnumerator CR_DisableAndRefreshAfterDelay(float delay)
+    {
 
+        Collider[] colliders = GetComponentsInChildren<Collider>();
+        Renderer treeRenderer = GetComponent<Renderer>();
+
+        foreach(Collider collider in colliders)
+        {
+            collider.enabled = false;
+        }
+
+        treeRenderer.enabled = false;
+        yield return new WaitForSeconds(delay);
+
+        foreach (Collider collider in colliders)
+        {
+            collider.enabled = true;
+        }
+
+        treeRenderer.enabled = true;
+    }
 }
