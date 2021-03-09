@@ -1042,6 +1042,11 @@ PrefabInstance:
       propertyPath: m_ReferenceResolution.y
       value: 1920
       objectReference: {fileID: 0}
+    - target: {fileID: 8484573315676731982, guid: de5792d19441c2e4a854c2bc5a061ff9,
+        type: 3}
+      propertyPath: m_Name
+      value: InGameUICanvas
+      objectReference: {fileID: 0}
     - target: {fileID: 8484573316124245265, guid: de5792d19441c2e4a854c2bc5a061ff9,
         type: 3}
       propertyPath: m_AnchorMax.x
