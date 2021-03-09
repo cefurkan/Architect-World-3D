@@ -6,10 +6,9 @@ public class PlayerCollectController : MonoBehaviour
 {
     [SerializeField]
     private int collectedWoodCount;
-    private bool isTreeFinish;
-    private GameObject currentTree;
+    private bool isCurrentTreeFinished;
+    private TreeManager currentTree;
 
-    private int currentWoodCollectedFromTree;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Tree"))
@@ -18,14 +17,14 @@ public class PlayerCollectController : MonoBehaviour
             {
                 return;
             }
-            currentTree = other.gameObject;
+            currentTree = other.gameObject.GetComponentInParent<TreeManager>();
             OnNearTree();
         }
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.gameObject ==currentTree )
+        if(other.gameObject.GetComponentInParent<TreeManager>() ==currentTree )
         {
             AwayFromTree();
         }
@@ -44,13 +43,14 @@ public class PlayerCollectController : MonoBehaviour
     }
     private IEnumerator CR_OnNeartree()
     {
-        while (!isTreeFinish && currentTree!=null)
+        while (!isCurrentTreeFinished && currentTree!=null)
         {
             collectedWoodCount++;
-            currentWoodCollectedFromTree++;
-            if (currentWoodCollectedFromTree==5)
+            currentTree.DecreaseWoodCount();
+
+            if (currentTree.isTreeFinished)
             {
-                isTreeFinish = true;
+                isCurrentTreeFinished = true;
             }
             yield return new WaitForSeconds(0.5f);
         }
