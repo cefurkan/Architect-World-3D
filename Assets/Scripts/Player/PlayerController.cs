@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    private static PlayerController instance;
+    public static PlayerController Instance => instance;
+
     [Space]
     [SerializeField]
     private float moveSpeed = 1f;
@@ -12,21 +15,27 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     private float moveRotateSpeed = 50f;
 
-    float rotateSpeed = 50f;
-
     Vector3 firstTouchPos = Vector3.zero;
     Vector3 deltaTouchPos = Vector3.zero;
     Vector3 direction = Vector3.zero;
+
+    public ResourcesSO wood;
 
     [SerializeField]
     float range = 50f;
     void Start()
     {
-     
+        instance = this;
     }
 
  
     void Update()
+    {
+        Move();
+
+    }
+
+    private void Move()
     {
         if (Input.GetMouseButtonDown(0))
         {
@@ -37,16 +46,13 @@ public class PlayerController : MonoBehaviour
         {
             deltaTouchPos = Input.mousePosition - firstTouchPos;
             direction = new Vector3(deltaTouchPos.x, 0f, deltaTouchPos.y);
-            //  Debug.Log(direction+"direction");
 
             Vector3 moveForward = new Vector3(0f, 0f, direction.z).normalized;
             Vector3 moveRotate = new Vector3(0f, direction.x, 0f).normalized;
 
-
             if (Mathf.Abs(deltaTouchPos.y) >= range * .5)
             {
                 transform.Translate(moveForward * moveSpeed * Time.deltaTime);
-
             }
 
             if (Mathf.Abs(deltaTouchPos.x) >= range)
@@ -54,7 +60,6 @@ public class PlayerController : MonoBehaviour
                 transform.Rotate(moveRotate * moveRotateSpeed * Time.deltaTime);
             }
         }
-        
     }
 }
   

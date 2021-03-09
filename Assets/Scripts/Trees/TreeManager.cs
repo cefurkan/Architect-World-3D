@@ -4,27 +4,30 @@ using UnityEngine;
 
 public class TreeManager : MonoBehaviour
 {
-    private int treeWoodCount = 5;
+    [SerializeField]
+    private float treeWoodCount = 5;
     public bool isTreeFinished;
 
 // 13. satırdaki kodun aynısını yapıyor.    
-    public int TreeWoodCount { get { return treeWoodCount; } }
+    public float TreeWoodCount { get { return treeWoodCount; } }
 
-    //public int TsreeWoodCount()
+    //public int TreeWoodCount()
     //{
     //    return treeWoodCount;
     //}
 
-    public void DecreaseWoodCount(int decreaseAmount)
+    public void DecreaseWoodCount(float decreaseAmount)
     {
-        treeWoodCount-= decreaseAmount;
+        treeWoodCount = treeWoodCount - decreaseAmount;
+        PlayerController.Instance.wood.amount++;
+
         if (treeWoodCount == 0)
         {
             isTreeFinished = true;
             DestroyFinishedTree();
         }
-
     }
+
     public void DestroyFinishedTree()
     {
         gameObject.SetActive(false);

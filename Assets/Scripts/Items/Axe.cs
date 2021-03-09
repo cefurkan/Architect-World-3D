@@ -7,11 +7,15 @@ public class Axe : MonoBehaviour
     public static Axe Instance => instance;
     private static Axe instance;
 
-    public float Speed = 1f;
-    public int Power = 1;
+    private float speed = 1.5f;
+    private float power = .5f;
 
+    private TreeManager currentTree;
     private void Awake()
     {
+        // İleride Axe'ı Scriptable Objectden farklı itemlarla çekebiliriz,
+        // O yüzden singleton yazdım. Şu an işimize yaramıyor fakat yarayacaktır.
+        
         if (instance == null)
         {
             instance = this;
@@ -22,5 +26,58 @@ public class Axe : MonoBehaviour
             Destroy(gameObject);
         }
      
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Tree"))
+        {
+            Debug.Log("girdim");
+            currentTree = other.gameObject.GetComponentInParent<TreeManager>();
+
+            if (currentTree != null)
+            {
+                OnNearTree();
+            }
+
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.GetComponentInParent<TreeManager>() == currentTree)
+        {
+            AwayFromTree();
+        }
+    }
+
+    private void OnNearTree()
+    {
+        StartCoroutine(CR_OnNeartree());
+    }
+
+    private void AwayFromTree()
+    {
+        currentTree = null;
+        StopCoroutine(CR_OnNeartree());
+        Debug.Log("çıktım");
+
+    }
+    private IEnumerator CR_OnNeartree()
+    {
+        while (currentTree != null)
+        {
+            currentTree.DecreaseWoodCount(power);
+
+            if (currentTree.isTreeFinished)
+            {
+                break;
+            }
+            Debug.Log("vurdum" + currentTree.TreeWoodCount);
+            
+            yield return new WaitForSeconds(speed);
+
+        }
+
     }
 }

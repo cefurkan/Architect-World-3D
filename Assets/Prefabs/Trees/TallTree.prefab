@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4220201677145404301}
   m_Layer: 0
   m_Name: Trigger
-  m_TagString: Untagged
+  m_TagString: Tree
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -141,6 +141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f970ec5a760514a4b8c011d679f69cef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  treeWoodCount: 5
   isTreeFinished: 0
 --- !u!54 &162324542170459728
 Rigidbody:
