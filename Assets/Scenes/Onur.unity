@@ -176,7 +176,7 @@ PrefabInstance:
     - target: {fileID: 7796914344768678988, guid: 59cbfc3bfedd64344938c2440dadee9f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 13
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 7796914344768678988, guid: 59cbfc3bfedd64344938c2440dadee9f,
         type: 3}
@@ -250,7 +250,7 @@ PrefabInstance:
     - target: {fileID: 1405474176248554965, guid: f2620e50f3eeb134d8c4e2533b11b872,
         type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1405474176248554965, guid: f2620e50f3eeb134d8c4e2533b11b872,
         type: 3}
@@ -344,7 +344,7 @@ PrefabInstance:
     - target: {fileID: 1405474176248554965, guid: f2620e50f3eeb134d8c4e2533b11b872,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 1405474176248554965, guid: f2620e50f3eeb134d8c4e2533b11b872,
         type: 3}
@@ -527,10 +527,9 @@ Transform:
   m_LocalScale: {x: 0.25, y: 0.5, z: 0.25}
   m_Children:
   - {fileID: 1857643418}
-  - {fileID: 963194228}
   - {fileID: 705507995}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &198596824
 Rigidbody:
@@ -613,7 +612,7 @@ Transform:
   m_Children:
   - {fileID: 1997284230}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &384610108
 PrefabInstance:
@@ -635,7 +634,7 @@ PrefabInstance:
     - target: {fileID: 7796914344768678988, guid: 59cbfc3bfedd64344938c2440dadee9f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 7796914344768678988, guid: 59cbfc3bfedd64344938c2440dadee9f,
         type: 3}
@@ -846,7 +845,7 @@ PrefabInstance:
     - target: {fileID: 7796914344768678988, guid: 59cbfc3bfedd64344938c2440dadee9f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 7796914344768678988, guid: 59cbfc3bfedd64344938c2440dadee9f,
         type: 3}
@@ -990,7 +989,7 @@ Transform:
   m_LocalScale: {x: 2, y: 1.2670686, z: 1.0979637}
   m_Children: []
   m_Father: {fileID: 198596823}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
 --- !u!1001 &743463095
 PrefabInstance:
@@ -1012,7 +1011,7 @@ PrefabInstance:
     - target: {fileID: 7796914344768678988, guid: 59cbfc3bfedd64344938c2440dadee9f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 7796914344768678988, guid: 59cbfc3bfedd64344938c2440dadee9f,
         type: 3}
@@ -1086,7 +1085,7 @@ PrefabInstance:
     - target: {fileID: 1405474176248554965, guid: f2620e50f3eeb134d8c4e2533b11b872,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 1405474176248554965, guid: f2620e50f3eeb134d8c4e2533b11b872,
         type: 3}
@@ -1180,7 +1179,7 @@ PrefabInstance:
     - target: {fileID: 7796914344768678988, guid: 59cbfc3bfedd64344938c2440dadee9f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 12
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 7796914344768678988, guid: 59cbfc3bfedd64344938c2440dadee9f,
         type: 3}
@@ -1313,11 +1312,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.3826835, y: 0.00000002020659, z: -0.000000008369845, w: 0.92387956}
-  m_LocalPosition: {x: 0, y: 14.000002, z: -28}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: 22.380001, z: -7.92}
+  m_LocalScale: {x: 0.25, y: 0.375, z: 0.37500006}
   m_Children: []
-  m_Father: {fileID: 198596823}
-  m_RootOrder: 1
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 60, y: 0, z: 0}
 --- !u!114 &963194229
 MonoBehaviour:
@@ -1509,7 +1508,7 @@ PrefabInstance:
     - target: {fileID: 1405474176248554965, guid: f2620e50f3eeb134d8c4e2533b11b872,
         type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1405474176248554965, guid: f2620e50f3eeb134d8c4e2533b11b872,
         type: 3}
@@ -1711,7 +1710,7 @@ PrefabInstance:
     - target: {fileID: 7796914344768678988, guid: 59cbfc3bfedd64344938c2440dadee9f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 12
       objectReference: {fileID: 0}
     - target: {fileID: 7796914344768678988, guid: 59cbfc3bfedd64344938c2440dadee9f,
         type: 3}
@@ -1785,7 +1784,7 @@ PrefabInstance:
     - target: {fileID: 7796914344768678988, guid: 59cbfc3bfedd64344938c2440dadee9f,
         type: 3}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 7796914344768678988, guid: 59cbfc3bfedd64344938c2440dadee9f,
         type: 3}
@@ -1893,7 +1892,7 @@ PrefabInstance:
     - target: {fileID: 1405474176248554965, guid: f2620e50f3eeb134d8c4e2533b11b872,
         type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 1405474176248554965, guid: f2620e50f3eeb134d8c4e2533b11b872,
         type: 3}
@@ -2285,7 +2284,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1967885191
 GameObject:
@@ -2429,7 +2428,7 @@ MonoBehaviour:
   m_FollowOffset: {x: 0, y: 7, z: -7}
   m_XDamping: 0
   m_YDamping: 0
-  m_ZDamping: 1
+  m_ZDamping: 0
   m_AngularDampingMode: 0
   m_PitchDamping: 0
   m_YawDamping: 0
@@ -2448,11 +2447,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_TrackedObjectOffset: {x: 0, y: 0, z: 0}
-  m_LookaheadTime: 1
-  m_LookaheadSmoothing: 1
+  m_LookaheadTime: 0.1
+  m_LookaheadSmoothing: 15
   m_LookaheadIgnoreY: 0
-  m_HorizontalDamping: 3
-  m_VerticalDamping: 3
+  m_HorizontalDamping: 0
+  m_VerticalDamping: 0
   m_ScreenX: 0.5
   m_ScreenY: 0.5
   m_DeadZoneWidth: 0
