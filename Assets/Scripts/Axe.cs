@@ -8,7 +8,7 @@ public class Axe : MonoBehaviour
     private static Axe instance;
 
     public float Speed = 1f;
-    public float Power = 1f;
+    public int Power = 1;
 
     private void Awake()
     {

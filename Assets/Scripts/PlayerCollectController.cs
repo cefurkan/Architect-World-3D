@@ -47,7 +47,7 @@ public class PlayerCollectController : MonoBehaviour
         while (!isCurrentTreeFinished && currentTree!=null)
         {
             collectedWoodCount++;
-            currentTree.DecreaseWoodCount(axePower);
+            currentTree.DecreaseWoodCount(Axe.Instance.Power);
 
             if (currentTree.isTreeFinished)
             {
