@@ -7,7 +7,7 @@ public class Axe : MonoBehaviour
     public static Axe Instance => instance;
     private static Axe instance;
 
-    private float speed = 1.5f;
+    private float speed = 2f;
     private float power = .5f;
 
     public TreeManager currentTree;
