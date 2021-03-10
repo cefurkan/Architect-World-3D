@@ -43,7 +43,6 @@ public class TreeManager : MonoBehaviour
 
         Collider[] colliders = GetComponentsInChildren<Collider>();
         Renderer treeRenderer = GetComponent<Renderer>();
-
         foreach(Collider collider in colliders)
         {
             collider.enabled = false;
@@ -55,7 +54,9 @@ public class TreeManager : MonoBehaviour
         foreach (Collider collider in colliders)
         {
             collider.enabled = true;
+
         }
+
 
         treeWoodCount = 5;
         treeRenderer.enabled = true;

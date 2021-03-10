@@ -10,13 +10,15 @@ public class Axe : MonoBehaviour
     private float speed = 2f;
     private float power = .5f;
 
+    public ParticleSystem particleSystem;
+
     public TreeManager currentTree;
 
     private void Awake()
     {
         // İleride Axe'ı Scriptable Objectden farklı itemlarla çekebiliriz,
         // O yüzden singleton yazdım. Şu an işimize yaramıyor fakat yarayacaktır.
-        
+
         if (instance == null)
         {
             instance = this;
@@ -26,62 +28,59 @@ public class Axe : MonoBehaviour
         {
             Destroy(gameObject);
         }
-     
+
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Tree"))
         {
-            Debug.Log("girdim");
             currentTree = other.gameObject.GetComponentInParent<TreeManager>();
-
-            if (currentTree != null)
-            {
-                OnNearTree();
-
-            }
-
         }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        if (currentTree != null)
+        {
+            PlayerController.Instance.anim.SetBool("Melee1", true);
+        }
+     
     }
 
     private void OnTriggerExit(Collider other)
     {
-        AwayFromTree();
+        //  AwayFromTree();
+
+        PlayerController.Instance.anim.SetBool("Melee1", false);
+
         if (other.gameObject.GetComponentInParent<TreeManager>() == currentTree)
         {
-           
+            currentTree = null;
         }
+    }
+
+    private void Update()
+    {
+       TreeDestroyed();
     }
 
     private void OnNearTree()
     {
-        StartCoroutine(CR_OnNeartree());
-    }
-
-    private void AwayFromTree()
-    {
-        currentTree = null;
-        StopCoroutine(CR_OnNeartree());
-        Debug.Log("çıktım");
-
-    }
-    private IEnumerator CR_OnNeartree()
-    {
-        while (currentTree != null)
+        if (currentTree != null)
         {
             currentTree.DecreaseWoodCount(power);
-
-            if (currentTree.isTreeFinished)
-            {
-                break;
-            }
-            Debug.Log("vurdum" + currentTree.TreeWoodCount);
-
-           PlayerController.Instance.anim.SetTrigger("Melee");
-            yield return new WaitForSeconds(speed);
-
+            particleSystem.Play();
         }
-
     }
+
+    private void TreeDestroyed()
+    {
+        if (currentTree != null && currentTree.TreeWoodCount <= 0)
+        {
+            currentTree = null;
+            PlayerController.Instance.anim.SetBool("Melee1", false);
+        }
+    }
+
 }
