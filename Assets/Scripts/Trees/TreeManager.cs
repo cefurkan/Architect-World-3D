@@ -23,7 +23,7 @@ public class TreeManager : MonoBehaviour
         treeWoodCount = treeWoodCount - decreaseAmount;
         PlayerController.Instance.wood.amount++;
 
-        if (treeWoodCount == 0)
+        if (treeWoodCount <= 0)
         {
             isTreeFinished = true;
             DisableAndRefreshAfterDelay(5f);
@@ -57,6 +57,8 @@ public class TreeManager : MonoBehaviour
             collider.enabled = true;
         }
 
+        treeWoodCount = 5;
         treeRenderer.enabled = true;
+        isTreeFinished = false;
     }
 }
