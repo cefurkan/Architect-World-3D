@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     Vector3 deltaTouchPos = Vector3.zero;
     Vector3 direction = Vector3.zero;
 
-    public Animator Anim;
+    public Animator anim;
 
     public ResourcesSO wood;
 
@@ -30,11 +30,11 @@ public class PlayerController : MonoBehaviour
         instance = this;
     }
 
- 
+
     void Update()
     {
         Move();
-        Anim.SetFloat("MoveSpeed", direction.z);
+
     }
 
     private void Move()
@@ -50,25 +50,41 @@ public class PlayerController : MonoBehaviour
             direction = new Vector3(deltaTouchPos.x, 0f, deltaTouchPos.y);
 
             Vector3 moveForward = new Vector3(0f, 0f, direction.z).normalized;
+            Vector3 moveRight = new Vector3(direction.x, 0f, 0f).normalized;
+
             Vector3 moveRotate = new Vector3(0f, direction.x, 0f).normalized;
 
-            if (Mathf.Abs(deltaTouchPos.y) >= range * .5)
+            direction.z = Mathf.Abs(direction.z);
+
+            if (direction.z >= range * .5)
             {
                 transform.Translate(moveForward * moveSpeed * Time.deltaTime);
-                Anim.SetBool("Run",true);
+                anim.SetFloat("MoveSpeed", direction.z);
             }
+
+
             if (Mathf.Abs(deltaTouchPos.x) >= range)
             {
-                transform.Rotate(moveRotate * moveRotateSpeed * Time.deltaTime);
+                transform.Translate(moveRight * moveSpeed * Time.deltaTime);
+                if (deltaTouchPos.x > range)
+                {
+                    // TODO yüzü sağa baksın
+                }
+                else if (deltaTouchPos.x < range)
+                {
+                    // TODO yüzü sola baksın
+                }
+
             }
         }
         else
         {
-            Anim.SetBool("Run", false);
+            anim.SetFloat("MoveSpeed", 0);
+
         }
 
-        
+
     }
 }
-  
+
 

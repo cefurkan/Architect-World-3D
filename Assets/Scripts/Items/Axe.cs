@@ -10,9 +10,8 @@ public class Axe : MonoBehaviour
     private float speed = 1.5f;
     private float power = .5f;
 
-    private TreeManager currentTree;
+    public TreeManager currentTree;
 
-    public Animator AxeAnim;
     private void Awake()
     {
         // İleride Axe'ı Scriptable Objectden farklı itemlarla çekebiliriz,
@@ -40,6 +39,7 @@ public class Axe : MonoBehaviour
             if (currentTree != null)
             {
                 OnNearTree();
+
             }
 
         }
@@ -47,9 +47,10 @@ public class Axe : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
+        AwayFromTree();
         if (other.gameObject.GetComponentInParent<TreeManager>() == currentTree)
         {
-            AwayFromTree();
+           
         }
     }
 
@@ -77,7 +78,7 @@ public class Axe : MonoBehaviour
             }
             Debug.Log("vurdum" + currentTree.TreeWoodCount);
 
-            AxeAnim.SetTrigger("Melee");
+           PlayerController.Instance.anim.SetTrigger("Melee");
             yield return new WaitForSeconds(speed);
 
         }
