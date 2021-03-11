@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
 
     [Space]
     public ResourcesSO wood;
+    public ResourcesSO gold;
     [Space]
     public Transform modelRoot;
 
@@ -111,7 +112,6 @@ public class PlayerController : MonoBehaviour
         {
             foreach (GameObject stackableLog in stackableLogs)
             {
-                Debug.Log("kapalı all");
                 stackableLog.gameObject.SetActive(false);
             }
         }

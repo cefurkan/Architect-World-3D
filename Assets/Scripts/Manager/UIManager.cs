@@ -6,13 +6,16 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public Text woodText;
-   
-    private void UpdateWoodCounter()
+    public Text goldText;
+
+
+    private void UpdateResources()
     {
         woodText.text = PlayerController.Instance.wood.amount.ToString();
+        goldText.text = PlayerController.Instance.gold.amount.ToString();
     }
     private void Update()
     {
-        UpdateWoodCounter();
+        UpdateResources();
     }
 }
