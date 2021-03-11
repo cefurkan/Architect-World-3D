@@ -7,8 +7,6 @@ public class PlayerController : MonoBehaviour
     private static PlayerController instance;
     public static PlayerController Instance => instance;
 
-   //  public Animation axe;
-   // public AnimationState axespeed;
     private float moveSpeed = 7.5f;
 
     Vector3 firstTouchPos = Vector3.zero;
@@ -33,7 +31,6 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-      //  axespeed.speed = 4f;
         instance = this;
     }
 
@@ -56,12 +53,12 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetMouseButton(0))
         {
-
             deltaTouchPos = Input.mousePosition - firstTouchPos;
             direction = new Vector3(deltaTouchPos.x, 0f, deltaTouchPos.y);
 
             Vector3 moveForward = new Vector3(0f, 0f, direction.z).normalized;
             Vector3 moveRight = new Vector3(direction.x, 0f, 0f).normalized;
+            Vector3 moveRotate = new Vector3(0f, direction.x, 0f).normalized;
 
             direction.z = Mathf.Abs(direction.z);
             if (direction.z >= range)
@@ -76,14 +73,15 @@ public class PlayerController : MonoBehaviour
             }
 
 
-            if (Mathf.Abs(deltaTouchPos.x) >= range)
+            if (Mathf.Abs(deltaTouchPos.x) >= range *3)
             {
+                transform.Rotate(moveRotate * 150 * Time.deltaTime);
 
                 transform.Translate(moveRight * moveSpeed * Time.deltaTime);
                 if (deltaTouchPos.x > range)
                 {
                     // moveSpeed = svermingSpeedx * 3;
-
+                    transform.Rotate(moveRotate * 5 * Time.deltaTime);
                     modelRoot.transform.localRotation = Quaternion.Euler(0, 90f, 0);
                     anim.SetFloat("MoveSpeed", svermingSpeedx);
 
