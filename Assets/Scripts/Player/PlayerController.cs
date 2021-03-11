@@ -21,7 +21,6 @@ public class PlayerController : MonoBehaviour
 
     [Space]
     public Animator anim;
-     public Animation anima;
 
     [Space]
     public ResourcesSO wood;
@@ -36,13 +35,6 @@ public class PlayerController : MonoBehaviour
       //  axespeed.speed = 4f;
         instance = this;
     }
-
-    private void Osman()
-    {
-        Debug.Log("osman");
-    }
-
-    
 
     void Update()
     {
