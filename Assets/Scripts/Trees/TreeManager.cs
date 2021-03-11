@@ -21,7 +21,7 @@ public class TreeManager : MonoBehaviour
     public void DecreaseWoodCount(float decreaseAmount)
     {
         treeWoodCount = treeWoodCount - decreaseAmount;
-        PlayerController.Instance.wood.amount++;
+        PlayerController.Instance.wood.amount += Mathf.RoundToInt(decreaseAmount);
 
         if (treeWoodCount <= 0)
         {

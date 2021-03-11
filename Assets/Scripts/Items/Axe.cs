@@ -7,8 +7,9 @@ public class Axe : MonoBehaviour
     public static Axe Instance => instance;
     private static Axe instance;
 
-    private float speed = 2f;
-    private float power = .5f;
+    public float power = .5f;
+    public float meleeSpeed = 1f;
+
 
     public ParticleSystem particleSystem;
 
@@ -43,16 +44,16 @@ public class Axe : MonoBehaviour
     {
         if (currentTree != null)
         {
-            PlayerController.Instance.anim.SetBool("Melee1", true);
+            PlayerController.Instance.anim.SetBool("Melee", true);
         }
-     
+
     }
 
     private void OnTriggerExit(Collider other)
     {
         //  AwayFromTree();
 
-        PlayerController.Instance.anim.SetBool("Melee1", false);
+        PlayerController.Instance.anim.SetBool("Melee", false);
 
         if (other.gameObject.GetComponentInParent<TreeManager>() == currentTree)
         {
@@ -62,7 +63,7 @@ public class Axe : MonoBehaviour
 
     private void Update()
     {
-       TreeDestroyed();
+        TreeDestroyed();
     }
 
     private void OnNearTree()
@@ -79,7 +80,7 @@ public class Axe : MonoBehaviour
         if (currentTree != null && currentTree.TreeWoodCount <= 0)
         {
             currentTree = null;
-            PlayerController.Instance.anim.SetBool("Melee1", false);
+            PlayerController.Instance.anim.SetBool("Melee", false);
         }
     }
 

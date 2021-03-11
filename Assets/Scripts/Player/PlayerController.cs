@@ -7,6 +7,8 @@ public class PlayerController : MonoBehaviour
     private static PlayerController instance;
     public static PlayerController Instance => instance;
 
+   //  public Animation axe;
+   // public AnimationState axespeed;
     private float moveSpeed = 7.5f;
 
     Vector3 firstTouchPos = Vector3.zero;
@@ -16,8 +18,11 @@ public class PlayerController : MonoBehaviour
     [Space]
     [SerializeField]
     float range = 50f;
+
     [Space]
     public Animator anim;
+     public Animation anima;
+
     [Space]
     public ResourcesSO wood;
     [Space]
@@ -28,16 +33,22 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+      //  axespeed.speed = 4f;
         instance = this;
     }
 
+    private void Osman()
+    {
+        Debug.Log("osman");
+    }
+
+    
 
     void Update()
     {
         Move();
         StackLog();
     }
-
     private void Move()
     {
         float svermingSpeedz = direction.z * .003f;
