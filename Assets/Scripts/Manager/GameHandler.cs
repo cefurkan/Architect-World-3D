@@ -5,8 +5,8 @@ using UnityEngine.Events;
 
 public enum GameState
 {
-    Default,
-    Tutorial,
+    InBuildingController,
+    InShop,
     InGame,   
 }
 public class GameHandler : MonoBehaviour
@@ -18,16 +18,30 @@ public class GameHandler : MonoBehaviour
     private void Start()
     {
         instance = this;
-        gameState = GameState.Default;
+        
 
     }
     public void ChangeGameState(GameState newState)
     {
         GameState oldGameState = gameState;
         gameState = newState;
-        OnGameSateChange?.Invoke(oldGameState,gameState);
+        OnGameSateChange?.Invoke(oldGameState, gameState);
 
     }
 
-}
+    private void Update()
+    {
+        switch (gameState)
+        {
+            case GameState.InBuildingController:
+                break;
+            case GameState.InShop:
+                break;
+            case GameState.InGame:
+                break;
+            default:
+                break;
 
+        }
+    }
+}

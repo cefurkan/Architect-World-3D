@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: Gold
   m_EditorClassIdentifier: 
   name: Gold
-  amount: 43455
+  amount: 400

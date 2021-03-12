@@ -99,6 +99,7 @@ public class Axe : MonoBehaviour
         {
             currentTree.DecreaseWoodCount(power);
             particleSystem.Play();
+
         }
     }
 

@@ -17,7 +17,7 @@ MonoBehaviour:
   - itemName: Axe1
     isUnlocked: 1
     unlockCost: 0
-    unlockedLevel: 0
+    unlockedLevel: 2
     axeLevel:
     - unlockCost: 0
       speed: 1
