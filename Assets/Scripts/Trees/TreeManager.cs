@@ -5,7 +5,7 @@ using UnityEngine;
 public class TreeManager : MonoBehaviour
 {
     [SerializeField]
-    private float treeWoodCount = 5;
+    private int treeWoodCount = 5;
     public bool isTreeFinished;
 
    
@@ -18,7 +18,7 @@ public class TreeManager : MonoBehaviour
     //    return treeWoodCount;
     //}
 
-    public void DecreaseWoodCount(float decreaseAmount)
+    public void DecreaseWoodCount(int decreaseAmount)
     {
         treeWoodCount = treeWoodCount - decreaseAmount;
         PlayerController.Instance.wood.amount += Mathf.RoundToInt(decreaseAmount);

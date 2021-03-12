@@ -17,7 +17,7 @@ public class ShopSystem : MonoBehaviour
     }
     public void SpeedUp()
     {
-       Axe.Instance.meleeSpeed += .25f;
+       Axe.Instance.meleeSpeed += 1;
         PlayerController.Instance.anim.SetFloat("MeleeSpeed", 1f + Axe.Instance.meleeSpeed);
     }
     public void PowerUp()

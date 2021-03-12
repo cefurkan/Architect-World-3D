@@ -7,27 +7,61 @@ public class Axe : MonoBehaviour
     public static Axe Instance => instance;
     private static Axe instance;
 
-    public float power = .5f;
-    public float meleeSpeed = 1f;
+    public int power;
+    public int meleeSpeed;
 
+    public GameObject[] axeModels;
 
     public ParticleSystem particleSystem;
+
+    public ShopSystemSO axeData;
 
     public TreeManager currentTree;
 
     private void Awake()
-    {
-        // İleride Axe'ı Scriptable Objectden farklı itemlarla çekebiliriz,
-        // O yüzden singleton yazdım. Şu an işimize yaramıyor fakat yarayacaktır.
-
+    {     
         if (instance == null)
         {
             instance = this;
-            // DontDestroyOnLoad(this);
+            DontDestroyOnLoad(this);
         }
         else
         {
             Destroy(gameObject);
+        }
+
+    }
+    private void Update()
+    {
+        TreeDestroyed();
+
+        power = axeData.shopItems[axeData.selectedIndex].axeLevel[axeData.shopItems[axeData.selectedIndex].unlockedLevel].power;
+        meleeSpeed = axeData.shopItems[axeData.selectedIndex].axeLevel[axeData.shopItems[axeData.selectedIndex].unlockedLevel].speed;
+        PlayerController.Instance.anim.SetFloat("MeleeSpeed", meleeSpeed);
+
+        if(axeData.selectedIndex == 0)
+        {
+            foreach(GameObject axe in axeModels)
+            {
+                axe.gameObject.SetActive(false);
+            }
+            axeModels[0].gameObject.SetActive(true);
+        }
+        if (axeData.selectedIndex == 1)
+        {
+            foreach (GameObject axe in axeModels)
+            {
+                axe.gameObject.SetActive(false);
+            }
+            axeModels[1].gameObject.SetActive(true);
+        }
+        if (axeData.selectedIndex == 2)
+        {
+            foreach (GameObject axe in axeModels)
+            {
+                axe.gameObject.SetActive(false);
+            }
+            axeModels[2].gameObject.SetActive(true);
         }
 
     }
@@ -51,19 +85,12 @@ public class Axe : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        //  AwayFromTree();
-
         PlayerController.Instance.anim.SetBool("Melee", false);
 
         if (other.gameObject.GetComponentInParent<TreeManager>() == currentTree)
         {
             currentTree = null;
         }
-    }
-
-    private void Update()
-    {
-        TreeDestroyed();
     }
 
     private void OnNearTree()
