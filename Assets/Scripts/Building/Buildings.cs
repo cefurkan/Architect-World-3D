@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEditor.UI;
 
 public class Buildings : MonoBehaviour
 {
@@ -11,12 +12,15 @@ public class Buildings : MonoBehaviour
     [HideInInspector] public int neededWood;
     public int rewardCoin;
 
+    public TextMesh neededWoodText;
+
     public int mahmut = 0;
 
     public GameObject buildingArea;
     public GameObject completedStructure;
 
-    public GameObject[] parts;
+    public List<GameObject> parts;
+    int artansayi;
 
 
     //public int neededWood1;
@@ -30,7 +34,15 @@ public class Buildings : MonoBehaviour
 
     private void Start()
     {
+
+       
+
         neededWood = neededWoodStartValue;
+
+        foreach (GameObject part in parts)
+        {
+            part.gameObject.SetActive(false);
+        }
     }
     private void Update()
     {
@@ -42,9 +54,47 @@ public class Buildings : MonoBehaviour
             isCompleted = true;
         }
 
-     
-       
-       
+        // YALNIZ BU İŞ BÖYLE OLMAZ SEN BUNU ELSE İFLE YAP imza: thrcgr;
+        //for (int f = 2, i = 0; f <= parts.Count * 2; f += 2, i += 1)
+        //{
+        //    if (neededWoodStartValue * f / 10 == neededWood)
+        //    {
+        //        neededWood -= neededWoodStartValue * f / 10;
+        //        parts[i].gameObject.SetActive(true);
+        //        parts.Remove(parts[i]);
+
+        //    }
+        //}
+
+        // parts sayısını ikiye bölüyorum, 
+
+
+
+
+        //for (int i = 0; i < parts.Count; i++)
+        //{
+
+        //    if (busayidabirarttir < artansayi)
+        //    {
+        //        parts[i].gameObject.SetActive(true);
+
+        //    }
+        //    else if (artansayi  >= busayidabirarttir)
+        //    {
+        //        artansayi = 0;
+
+        //    }
+
+        var increaseAmount = (neededWoodStartValue / 2) / parts.Count;
+
+        if (artansayi > increaseAmount)
+        {
+            parts[0].gameObject.SetActive(true);
+            parts.Remove(parts[0]);
+            artansayi = 0;
+        }
+
+        neededWoodText.text = neededWood.ToString();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -54,9 +104,7 @@ public class Buildings : MonoBehaviour
             osman = true;
             StartCoroutine(BuildingStructure());
         }
-
     }
-
     private void OnTriggerExit(Collider other)
     {
         osman = false;
@@ -69,20 +117,15 @@ public class Buildings : MonoBehaviour
             if (PlayerController.Instance.wood.amount > 0 && neededWood > 0)
             {
                 neededWood--;
+                artansayi++;
                 PlayerController.Instance.wood.amount--;
                 yield return new WaitForSeconds(.05f);
             }
 
-            if(PlayerController.Instance.wood.amount <= 0 || neededWood <= 0 || !osman) 
+            if (PlayerController.Instance.wood.amount <= 0 || neededWood <= 0 || !osman)
             {
                 break;
             }
-
         }
-
-
     }
-
-
-
 }
