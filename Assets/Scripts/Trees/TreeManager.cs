@@ -8,15 +8,18 @@ public class TreeManager : MonoBehaviour
     private int treeWoodCount = 5;
     public bool isTreeFinished;
 
-   
+    public GameObject logPrefab;
+    private void Start()
+    {
+        Invoke("GetPosAfterGravity", 1f);
+    }
 
-// 13. satırdaki kodun aynısını yapıyor.    
+    Vector3 GetPosAfterGravity()
+    {
+        return transform.position;
+    }
+
     public float TreeWoodCount { get { return treeWoodCount; } }
-
-    //public int TreeWoodCount()
-    //{
-    //    return treeWoodCount;
-    //}
 
     public void DecreaseWoodCount(int decreaseAmount)
     {
@@ -43,7 +46,7 @@ public class TreeManager : MonoBehaviour
 
         Collider[] colliders = GetComponentsInChildren<Collider>();
         Renderer treeRenderer = GetComponent<Renderer>();
-        foreach(Collider collider in colliders)
+        foreach (Collider collider in colliders)
         {
             collider.enabled = false;
         }
@@ -56,7 +59,6 @@ public class TreeManager : MonoBehaviour
             collider.enabled = true;
 
         }
-
 
         treeWoodCount = 5;
         treeRenderer.enabled = true;

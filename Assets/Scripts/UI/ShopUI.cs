@@ -116,6 +116,7 @@ public class ShopUI : MonoBehaviour
         }
 
     }
+
     private void UpgradeButton()
     {
         int nextLevelIndex = shopData.shopItems[currentIndex].unlockedLevel + 1;

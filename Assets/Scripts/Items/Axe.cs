@@ -12,7 +12,7 @@ public class Axe : MonoBehaviour
 
     public GameObject[] axeModels;
 
-    public ParticleSystem particleSystem;
+    public ParticleSystem leafParticle;
 
     public ShopSystemSO axeData;
 
@@ -98,7 +98,7 @@ public class Axe : MonoBehaviour
         if (currentTree != null)
         {
             currentTree.DecreaseWoodCount(power);
-            particleSystem.Play();
+            leafParticle.Play();
 
         }
     }

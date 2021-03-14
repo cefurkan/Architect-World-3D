@@ -8,11 +8,6 @@ public class BuildingsManager : MonoBehaviour
 
     public List<Buildings> buildings;
 
-    public List<Constructions> constructions;
-
-    bool isPart1;
-    bool isPart2;
-
     //public void Part1Button()
     //{
     //    if(buildings[0].neededWood1 <= PlayerController.Instance.wood.amount)
@@ -77,12 +72,10 @@ public class BuildingsManager : MonoBehaviour
     //    constructions[0].constructionArea.SetActive(false);
     //    constructions[0].construction.SetActive(true);
     //    constructions.Remove(constructions[0]);
-
     //}
 
     private void Update()
     {
-
         for (int i = 0; i < buildings.Count; i++)
         {
             if (buildings[i].isCompleted && buildings.Count > i+1)
@@ -95,7 +88,4 @@ public class BuildingsManager : MonoBehaviour
             }
         }
     }
-
-
-
 }

@@ -763,6 +763,7 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1920588536}
     m_Modifications:
+<<<<<<< Updated upstream
     - target: {fileID: 1576897079917682111, guid: 23b25665d8483284098226dd987644b4,
         type: 3}
       propertyPath: attractor
@@ -859,6 +860,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1967885196}
     - target: {fileID: 8571582234543313223, guid: e0afa0b078b9aff4aaf4990066fb944a,
+=======
+    - target: {fileID: 8484573316657196748, guid: de5792d19441c2e4a854c2bc5a061ff9,
+>>>>>>> Stashed changes
         type: 3}
       propertyPath: m_Name
       value: SimpleTree (2)
@@ -919,8 +923,13 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+<<<<<<< Updated upstream
   m_SourcePrefab: {fileID: 100100000, guid: e0afa0b078b9aff4aaf4990066fb944a, type: 3}
 --- !u!1 &273305551
+=======
+  m_SourcePrefab: {fileID: 100100000, guid: de5792d19441c2e4a854c2bc5a061ff9, type: 3}
+--- !u!1 &629297682 stripped
+>>>>>>> Stashed changes
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -133,6 +133,10 @@ public class PlayerController : MonoBehaviour
         {
             stackableLogs[4].gameObject.SetActive(true);
         }
+        if (wood.amount >= 60)
+        {
+            stackableLogs[5].gameObject.SetActive(true);
+        }
     }
 }
 
