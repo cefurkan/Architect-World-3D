@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class WoodLog : MonoBehaviour
 {
@@ -9,7 +7,7 @@ public class WoodLog : MonoBehaviour
         if(collision.gameObject.CompareTag("Player"))
         {
             Destroy(gameObject);
-            var wood = Resources.Load<ResourcesSO>("Wood");
+            var wood = Resources.Load<ResourcesSO>("Resource/Wood");
             wood.amount++;
         }
     }

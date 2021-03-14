@@ -5,21 +5,22 @@ using UnityEngine;
 public class TreeManager : MonoBehaviour
 {
     public float TreeWoodCount { get { return treeWoodCount; } }
-
     private int treeWoodCount;
+
+    public bool isTreeFinished;
+    public Transform logDropPosition;
 
     [SerializeField]
     private int treeStartWoodCount = 15;
-
-    public bool isTreeFinished;
-
-    public Transform logDropPosition;
-     GameObject logPrefab;
+    
+    GameObject logPrefab;
+    GameObject leafParticle;
 
     private void Start()
     {
         treeWoodCount = treeStartWoodCount;
-        logPrefab = Resources.Load<GameObject>("WoodLog");
+        leafParticle = Resources.Load<GameObject>("Tree/LeafParticle");
+        logPrefab = Resources.Load<GameObject>("Tree/WoodLog");
     }
 
     public void DecreaseWoodCount(int decreaseAmount)

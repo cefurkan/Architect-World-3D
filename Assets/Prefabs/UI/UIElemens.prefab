@@ -3629,7 +3629,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &464489817804509694
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4678,6 +4678,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6e4407af05444b34882b893b928f3d5c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  dragToPlayUI: {fileID: 3159088307962061033}
   woodText: {fileID: 8484573316468280830}
   goldText: {fileID: 8484573315171108554}
 --- !u!114 &1790533666984277929

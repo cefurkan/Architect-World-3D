@@ -11,10 +11,13 @@ public enum GameState
 }
 public class GameHandler : MonoBehaviour
 {
+    public static GameHandler Instance => instance;
+    private static GameHandler instance;
+
     public UnityAction<GameState, GameState> OnGameSateChange;
     public GameState gameState;
-    private static GameHandler instance;
-    public static GameHandler Instance => instance;
+
+ 
     private void Start()
     {
         instance = this;
@@ -43,5 +46,7 @@ public class GameHandler : MonoBehaviour
                 break;
 
         }
+
+      
     }
 }

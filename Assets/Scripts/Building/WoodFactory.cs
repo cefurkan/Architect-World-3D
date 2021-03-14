@@ -8,26 +8,54 @@ public class WoodFactory : MonoBehaviour
     public int maxAmount;
     public float generateTime;
 
+    private bool isCoroutineStarted;
+    private bool isTrigged;
+
+    public TextMesh woodAmountText;
+
     void Start()
     {
-        StartCoroutine(GenerateWood());
+        woodAmountText = GetComponentInChildren<TextMesh>();
+    }
+    private void Update()
+    {
+        if (woodAmount == 0 && !isTrigged)
+        {
+            isCoroutineStarted = false;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject.CompareTag("Player"))
+        {
+            isTrigged = false;
+        }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        PlayerController.Instance.wood.amount  += woodAmount;
-        woodAmount = 0;
-        StartCoroutine(GenerateWood());
-
+        if(other.CompareTag("Player"))
+        {
+            PlayerController.Instance.wood.amount += woodAmount;
+            woodAmount = 0;
+            isTrigged = true;
+            if (!isCoroutineStarted && isTrigged)
+            {
+                StartCoroutine(GenerateWood());
+            }
+        }
     }
-
+      
     IEnumerator GenerateWood()
     {
-        while(woodAmount < maxAmount)
+        isCoroutineStarted = true;
+        while (woodAmount < maxAmount)
         {
             woodAmount++;
+            woodAmountText.text = woodAmount.ToString();
             yield return new WaitForSeconds(generateTime);
         }
-    }     
-    
+    }
+
 }

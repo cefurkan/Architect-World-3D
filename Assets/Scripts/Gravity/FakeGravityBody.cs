@@ -1,22 +1,20 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 // Bu scriptin olduğu gameobjelerde muhakkak RigidBody olmalı
 [RequireComponent(typeof(Rigidbody))]
 public class FakeGravityBody : MonoBehaviour
 {
     FakeGravityAttractor attractor;
-    private Rigidbody rb;
+    private Rigidbody rigidbody;
 
     private void Start()
     {
-        rb = GetComponent<Rigidbody>();
+        rigidbody = GetComponent<Rigidbody>();
 
-        attractor = Resources.Load<FakeGravityAttractor>("Planet");
+        attractor = Resources.Load<FakeGravityAttractor>("Planet/Planet");
 
-        rb.constraints = RigidbodyConstraints.FreezeRotation;
-        rb.useGravity = false;
+        rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
+        rigidbody.useGravity = false;
     }
     private void Update()
     {

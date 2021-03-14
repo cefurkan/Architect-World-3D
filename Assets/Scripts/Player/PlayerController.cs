@@ -8,15 +8,9 @@ public class PlayerController : MonoBehaviour
 
     private static PlayerController instance;
 
-    private float moveSpeed = 7.5f;
-
     Vector3 firstTouchPos = Vector3.zero;
     Vector3 deltaTouchPos = Vector3.zero;
     Vector3 direction = Vector3.zero;
-
-    [Space]
-    [SerializeField]
-    float range = 50f;
 
     [Space]
     public Animator anim;
@@ -24,16 +18,19 @@ public class PlayerController : MonoBehaviour
     [Space]
     public ResourcesSO wood;
     public ResourcesSO gold;
+
     [Space]
     public Transform modelRoot;
 
     public GameObject[] stackableLogs;
 
+    private float moveSpeed = 7.5f;
+    private float range = 50f;
 
     void Start()
     {
-        wood = Resources.Load<ResourcesSO>("Wood");
-        gold = Resources.Load<ResourcesSO>("Gold");
+        wood = Resources.Load<ResourcesSO>("Resource/Wood");
+        gold = Resources.Load<ResourcesSO>("Resource/Gold");
 
         instance = this;
     }
@@ -45,10 +42,10 @@ public class PlayerController : MonoBehaviour
     }
     private void Move()
     {
+        // Parmağı kaydırdığımız miktarda animasyon hızını ayarlamak için, aşağıdaki iki değer lazım.
         float svermingSpeedz = direction.z * .003f;
         float svermingSpeedx = direction.x * .003f;
         moveSpeed = 5f;
-
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -77,7 +74,7 @@ public class PlayerController : MonoBehaviour
             }
 
 
-            if (Mathf.Abs(deltaTouchPos.x) >= range * 3)
+            if (Mathf.Abs(deltaTouchPos.x) >= range * 2)
             {
                 transform.Rotate(moveRotate * 150 * Time.deltaTime);
 
