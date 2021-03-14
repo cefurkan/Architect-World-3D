@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class ShopUI : MonoBehaviour
 {
-    [Space] public int totalCoins;
+    [Space] public int totalGold;
     [Space] public ShopSystemSO shopData;
     [Space] public GameObject[] axeModels;
     [Space] public TextMeshProUGUI unlockBtnText, upgradeBtnText, levelText, axeNameText;
@@ -20,7 +20,7 @@ public class ShopUI : MonoBehaviour
 
     private void Start()
     {
-        totalCoins = gold.amount;
+        totalGold = gold.amount;
 
         selectedIndex = shopData.selectedIndex;
         SetAxeInfo();

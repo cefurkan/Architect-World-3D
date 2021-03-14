@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 757cf5c20b1743b45b08401b225eec1a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  totalCoins: 5000
+  totalGold: 0
   shopData: {fileID: 11400000, guid: f3ea162e65106024483935bb9bb80db8, type: 2}
   axeModels:
   - {fileID: 0}

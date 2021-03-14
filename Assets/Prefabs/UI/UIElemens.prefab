@@ -4638,6 +4638,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8484573316657196751}
+  - component: {fileID: 8801845162731128548}
+  - component: {fileID: 1790533666984277929}
   m_Layer: 0
   m_Name: UIElemens
   m_TagString: Untagged
@@ -4664,6 +4666,49 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8801845162731128548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8484573316657196748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e4407af05444b34882b893b928f3d5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  woodText: {fileID: 8484573316468280830}
+  goldText: {fileID: 8484573315171108554}
+--- !u!114 &1790533666984277929
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8484573316657196748}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 757cf5c20b1743b45b08401b225eec1a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  totalGold: 0
+  shopData: {fileID: 11400000, guid: f3ea162e65106024483935bb9bb80db8, type: 2}
+  axeModels:
+  - {fileID: 1193656527}
+  - {fileID: 866152447}
+  - {fileID: 1116697873}
+  unlockBtnText: {fileID: 391593058}
+  upgradeBtnText: {fileID: 2103024946}
+  levelText: {fileID: 1951676219}
+  axeNameText: {fileID: 257023277}
+  speedText: {fileID: 1208989391}
+  powerText: {fileID: 1052410781}
+  unlockBtn: {fileID: 948220058}
+  upgradeBtn: {fileID: 1145774949}
+  nextBtn: {fileID: 2013092803}
+  previousBtn: {fileID: 270524110}
+  gold: {fileID: 11400000, guid: b736dc2f3c2f6cb44863d9295dc20011, type: 2}
 --- !u!1 &8484573316689455432
 GameObject:
   m_ObjectHideFlags: 0
