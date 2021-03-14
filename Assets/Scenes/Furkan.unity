@@ -311,21 +311,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 130200465}
     m_Modifications:
-    - target: {fileID: 2374207075059797928, guid: c3fb310712599144495d860afca012b3,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374207075059797928, guid: c3fb310712599144495d860afca012b3,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 7.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 4006132671018313514, guid: c3fb310712599144495d860afca012b3,
-        type: 3}
-      propertyPath: logDropPosition
-      value: 
-      objectReference: {fileID: 2124880724}
     - target: {fileID: 7178921393431946692, guid: c3fb310712599144495d860afca012b3,
         type: 3}
       propertyPath: m_RootOrder
@@ -568,12 +553,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d52bd54c3d6a4b42a45a2dcd98a06f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &1099099382 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2374207075059797928, guid: c3fb310712599144495d860afca012b3,
-    type: 3}
-  m_PrefabInstance: {fileID: 1479304287}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1190982425
 GameObject:
   m_ObjectHideFlags: 0
@@ -789,21 +768,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 130200465}
     m_Modifications:
-    - target: {fileID: 2374207075059797928, guid: c3fb310712599144495d860afca012b3,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.15
-      objectReference: {fileID: 0}
-    - target: {fileID: 2374207075059797928, guid: c3fb310712599144495d860afca012b3,
-        type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 7.25
-      objectReference: {fileID: 0}
-    - target: {fileID: 4006132671018313514, guid: c3fb310712599144495d860afca012b3,
-        type: 3}
-      propertyPath: logDropPosition
-      value: 
-      objectReference: {fileID: 1099099382}
     - target: {fileID: 7178921393431946692, guid: c3fb310712599144495d860afca012b3,
         type: 3}
       propertyPath: m_RootOrder
@@ -1077,12 +1041,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &2124880724 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2374207075059797928, guid: c3fb310712599144495d860afca012b3,
-    type: 3}
-  m_PrefabInstance: {fileID: 662248672}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1148771521655170635
 PrefabInstance:
   m_ObjectHideFlags: 0
