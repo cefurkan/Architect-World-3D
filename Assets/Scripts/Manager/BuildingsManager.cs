@@ -8,6 +8,11 @@ public class BuildingsManager : MonoBehaviour
 
     public List<Buildings> buildings;
 
+    private void Start()
+    {
+        
+    }
+
     //public void Part1Button()
     //{
     //    if(buildings[0].neededWood1 <= PlayerController.Instance.wood.amount)

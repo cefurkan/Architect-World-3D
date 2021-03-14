@@ -26,7 +26,7 @@ public class UIManager : MonoBehaviour
         if (Input.GetMouseButton(0) && !dragToPlay)
         {
             timer += Time.deltaTime;
-            if (timer >= 1f)
+            if (timer >= .5f)
             {
                 dragToPlay = true;
                 dragToPlayUI.gameObject.SetActive(false);

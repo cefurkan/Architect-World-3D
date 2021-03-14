@@ -12,11 +12,12 @@ public class Buildings : MonoBehaviour
     public int rewardCoin;
 
     BuildingArea buildingArea;
+    GameObject completedParticles;
 
     private void Start()
     {
         buildingArea = GetComponentInChildren<BuildingArea>();
-        isCompleted = buildingArea.isCompleted;
+        completedParticles = Resources.Load<GameObject>("Buildings/ConfettiParticle");
     }
     private void Update()
     {
@@ -26,6 +27,9 @@ public class Buildings : MonoBehaviour
             completedStructure.gameObject.SetActive(true);
             PlayerController.Instance.gold.amount += rewardCoin;
             buildingArea.isCompleted = true;
+            isCompleted = true;
+            Instantiate(completedParticles, transform.position, Quaternion.identity);
+
         }
     }
 }

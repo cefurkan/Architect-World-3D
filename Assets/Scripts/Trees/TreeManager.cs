@@ -16,8 +16,11 @@ public class TreeManager : MonoBehaviour
     GameObject logPrefab;
     GameObject leafParticle;
 
+    Vector3 initialPosition;
+
     private void Start()
     {
+        initialPosition = transform.position;
         treeWoodCount = treeStartWoodCount;
         leafParticle = Resources.Load<GameObject>("Tree/LeafParticle");
         logPrefab = Resources.Load<GameObject>("Tree/WoodLog");
@@ -28,6 +31,8 @@ public class TreeManager : MonoBehaviour
         treeWoodCount = treeWoodCount - decreaseAmount;
         PlayerController.Instance.wood.amount += Mathf.RoundToInt(decreaseAmount);
         Instantiate(logPrefab, logDropPosition.position, Quaternion.identity);
+        Instantiate(leafParticle, transform.position, Quaternion.identity, transform);
+        
 
         if (treeWoodCount <= 0)
         {
@@ -49,6 +54,7 @@ public class TreeManager : MonoBehaviour
 
         Collider[] colliders = GetComponentsInChildren<Collider>();
         Renderer treeRenderer = GetComponent<Renderer>();
+        GetComponent<Rigidbody>().isKinematic = true;
         foreach (Collider collider in colliders)
         {
             collider.enabled = false;
@@ -63,6 +69,8 @@ public class TreeManager : MonoBehaviour
 
         }
 
+        GetComponent<Rigidbody>().isKinematic = false;
+        transform.position = initialPosition;
         treeWoodCount = treeStartWoodCount;
         treeRenderer.enabled = true;
         isTreeFinished = false;

@@ -74,7 +74,7 @@ public class PlayerController : MonoBehaviour
             }
 
 
-            if (Mathf.Abs(deltaTouchPos.x) >= range * 2)
+            if (Mathf.Abs(deltaTouchPos.x) >= range * 3)
             {
                 transform.Rotate(moveRotate * 150 * Time.deltaTime);
 
@@ -83,7 +83,7 @@ public class PlayerController : MonoBehaviour
                 {
                     // moveSpeed = svermingSpeedx * 3;
                     transform.Rotate(moveRotate * 5 * Time.deltaTime);
-                    modelRoot.transform.localRotation = Quaternion.Euler(0, 90f, 0);
+                //    modelRoot.transform.localRotation = Quaternion.Euler(0, 90f, 0);
                     anim.SetFloat("MoveSpeed", svermingSpeedx);
 
                 }
@@ -92,7 +92,7 @@ public class PlayerController : MonoBehaviour
                     // moveSpeed = -svermingSpeedx * 3;
 
                     anim.SetFloat("MoveSpeed", -svermingSpeedx);
-                    modelRoot.transform.localRotation = Quaternion.Euler(0, -90f, 0);
+                 //   modelRoot.transform.localRotation = Quaternion.Euler(0, -90f, 0);
                 }
 
             }

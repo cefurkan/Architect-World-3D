@@ -44,6 +44,12 @@ public class WoodFactory : MonoBehaviour
             {
                 StartCoroutine(GenerateWood());
             }
+            else if(isCoroutineStarted && isTrigged)
+            {
+                StopAllCoroutines();
+                StartCoroutine(GenerateWood());
+            }
+
         }
     }
       
