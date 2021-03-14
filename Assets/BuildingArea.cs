@@ -60,7 +60,11 @@ private void OnTriggerEnter(Collider other)
 }
 private void OnTriggerExit(Collider other)
 {
-    isInTrigger = false;
+        if(other.gameObject.CompareTag("Player"))
+        {
+            isInTrigger = false;
+        }
+        
 }
 IEnumerator BuildingStructure()
 {
