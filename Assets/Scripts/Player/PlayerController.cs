@@ -4,8 +4,9 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private static PlayerController instance;
     public static PlayerController Instance => instance;
+
+    private static PlayerController instance;
 
     private float moveSpeed = 7.5f;
 
@@ -31,6 +32,9 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
+        wood = Resources.Load<ResourcesSO>("Wood");
+        gold = Resources.Load<ResourcesSO>("Gold");
+
         instance = this;
     }
 
@@ -73,7 +77,7 @@ public class PlayerController : MonoBehaviour
             }
 
 
-            if (Mathf.Abs(deltaTouchPos.x) >= range *3)
+            if (Mathf.Abs(deltaTouchPos.x) >= range * 3)
             {
                 transform.Rotate(moveRotate * 150 * Time.deltaTime);
 

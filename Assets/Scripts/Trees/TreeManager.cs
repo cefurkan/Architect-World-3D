@@ -4,27 +4,26 @@ using UnityEngine;
 
 public class TreeManager : MonoBehaviour
 {
+    private int treeWoodCount;
+
     [SerializeField]
-    private int treeWoodCount = 5;
+    private int treeStartWoodCount = 15;
+
     public bool isTreeFinished;
 
+    public Transform logDropPosition;
     public GameObject logPrefab;
     private void Start()
     {
-        Invoke("GetPosAfterGravity", 1f);
+        treeWoodCount = treeStartWoodCount;
     }
-
-    Vector3 GetPosAfterGravity()
-    {
-        return transform.position;
-    }
-
     public float TreeWoodCount { get { return treeWoodCount; } }
 
     public void DecreaseWoodCount(int decreaseAmount)
     {
         treeWoodCount = treeWoodCount - decreaseAmount;
         PlayerController.Instance.wood.amount += Mathf.RoundToInt(decreaseAmount);
+        Instantiate(logPrefab, logDropPosition.position, Quaternion.identity);
 
         if (treeWoodCount <= 0)
         {
@@ -60,7 +59,7 @@ public class TreeManager : MonoBehaviour
 
         }
 
-        treeWoodCount = 5;
+        treeWoodCount = treeStartWoodCount;
         treeRenderer.enabled = true;
         isTreeFinished = false;
     }

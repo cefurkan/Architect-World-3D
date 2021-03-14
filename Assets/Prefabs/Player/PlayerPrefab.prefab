@@ -1676,7 +1676,7 @@ MonoBehaviour:
   - {fileID: 2736917391470212638}
   - {fileID: 745119889123081961}
   - {fileID: 4875834019449613185}
-  leafParticle: {fileID: 0}
+  leafParticle: {fileID: 6858489068714683685}
   axeData: {fileID: 11400000, guid: f3ea162e65106024483935bb9bb80db8, type: 2}
   currentTree: {fileID: 0}
 --- !u!1 &8066529337515904843
@@ -2001,6 +2001,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1148771521856654483}
   m_PrefabAsset: {fileID: 0}
+--- !u!198 &6858489068714683685 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 5827515962789372342, guid: 954c026aa22ac894ba36f7a9751cccb6,
+    type: 3}
+  m_PrefabInstance: {fileID: 1148771521856654483}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3497074897678365857
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2232,15 +2238,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c768694749e43764cab6b88f28b81ace, type: 3}
---- !u!1 &745119889123081961 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8296310159106563872, guid: c768694749e43764cab6b88f28b81ace,
-    type: 3}
-  m_PrefabInstance: {fileID: 8751998986052739529}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3480977471896731445 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5277007258193633020, guid: c768694749e43764cab6b88f28b81ace,
+    type: 3}
+  m_PrefabInstance: {fileID: 8751998986052739529}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &745119889123081961 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8296310159106563872, guid: c768694749e43764cab6b88f28b81ace,
     type: 3}
   m_PrefabInstance: {fileID: 8751998986052739529}
   m_PrefabAsset: {fileID: 0}

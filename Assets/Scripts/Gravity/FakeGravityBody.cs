@@ -12,6 +12,9 @@ public class FakeGravityBody : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+     attractor = Resources.Load<FakeGravityAttractor>("Planet");
+
         rb.constraints = RigidbodyConstraints.FreezeRotation;
         rb.useGravity = false;
     }

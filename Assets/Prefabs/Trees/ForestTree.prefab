@@ -141,8 +141,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f970ec5a760514a4b8c011d679f69cef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  treeWoodCount: 5
+  treeStartWoodCount: 15
   isTreeFinished: 0
+  logDropPosition: {fileID: 0}
+  logPrefab: {fileID: 0}
 --- !u!54 &7522037115497801411
 Rigidbody:
   m_ObjectHideFlags: 0
