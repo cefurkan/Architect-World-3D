@@ -6,14 +6,14 @@ using UnityEngine;
 [RequireComponent(typeof(Rigidbody))]
 public class FakeGravityBody : MonoBehaviour
 {
-    public FakeGravityAttractor attractor;
+    FakeGravityAttractor attractor;
     private Rigidbody rb;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
 
-     attractor = Resources.Load<FakeGravityAttractor>("Planet");
+        attractor = Resources.Load<FakeGravityAttractor>("Planet");
 
         rb.constraints = RigidbodyConstraints.FreezeRotation;
         rb.useGravity = false;

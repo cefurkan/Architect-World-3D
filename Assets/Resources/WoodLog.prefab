@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3080520558603898066}
   - component: {fileID: -2269233357563297262}
   - component: {fileID: 3166761277829266667}
+  - component: {fileID: 2858421356884699217}
   m_Layer: 8
   m_Name: WoodLog
   m_TagString: Untagged
@@ -124,5 +125,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3e7929372682334383708da6e97dcc7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attractor: {fileID: 4860107154134948350, guid: 9950c00a64944e0449075f114bb25168,
-    type: 3}
+--- !u!114 &2858421356884699217
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3080520558603898065}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39f4d939d70df7b4eae52c6d1ac3bc50, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
