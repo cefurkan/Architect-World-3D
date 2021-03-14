@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class BuildingArea : MonoBehaviour
 {
+    [HideInInspector]
     public bool isCompleted;
-    public bool isInTrigger;
     public int neededWoodStartValue;
-    [HideInInspector] public int neededWood;
+    [HideInInspector]
+    public int neededWood;
+    [HideInInspector]
     public int increaseAmount;
+
+    private bool isInTrigger;
 
     TextMesh neededWoodText;
     int increaseValue;

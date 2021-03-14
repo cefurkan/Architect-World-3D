@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WoodFactory : MonoBehaviour
 {
-    public int woodAmount;
+    [HideInInspector] public int woodAmount;
     public int maxAmount;
     public float generateTime;
 
@@ -27,7 +27,7 @@ public class WoodFactory : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if(other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player"))
         {
             isTrigged = false;
         }
@@ -35,7 +35,7 @@ public class WoodFactory : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.CompareTag("Player"))
+        if (other.CompareTag("Player"))
         {
             PlayerController.Instance.wood.amount += woodAmount;
             woodAmount = 0;
@@ -44,7 +44,7 @@ public class WoodFactory : MonoBehaviour
             {
                 StartCoroutine(GenerateWood());
             }
-            else if(isCoroutineStarted && isTrigged)
+            else if (isCoroutineStarted && isTrigged)
             {
                 StopAllCoroutines();
                 StartCoroutine(GenerateWood());
@@ -52,7 +52,7 @@ public class WoodFactory : MonoBehaviour
 
         }
     }
-      
+
     IEnumerator GenerateWood()
     {
         isCoroutineStarted = true;
