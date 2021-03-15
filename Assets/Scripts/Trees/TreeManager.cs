@@ -6,10 +6,12 @@ public class TreeManager : MonoBehaviour
 {
     public float TreeWoodCount { get { return treeWoodCount; } }
     private int treeWoodCount;
+    public float treeRefreshDelay = 10f;
 
     public bool isTreeFinished;
     public Transform logDropPosition;
-
+    public Transform logParent;
+    
     [SerializeField]
     private int treeStartWoodCount = 15;
     
@@ -30,14 +32,14 @@ public class TreeManager : MonoBehaviour
     {
         treeWoodCount = treeWoodCount - decreaseAmount;
         PlayerController.Instance.wood.amount += Mathf.RoundToInt(decreaseAmount);
-        Instantiate(logPrefab, logDropPosition.position, Quaternion.identity,transform);
+        Instantiate(logPrefab, logDropPosition.position, Quaternion.identity,logParent);
         Instantiate(leafParticle, transform.position, Quaternion.identity, transform);
         
 
         if (treeWoodCount <= 0)
         {
             isTreeFinished = true;
-            DisableAndRefreshAfterDelay(5f);
+            DisableAndRefreshAfterDelay(treeRefreshDelay);
         }
     }
 

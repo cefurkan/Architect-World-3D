@@ -172,8 +172,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f970ec5a760514a4b8c011d679f69cef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  treeRefreshDelay: 10
   isTreeFinished: 0
   logDropPosition: {fileID: 2374207075059797928}
+  logParent: {fileID: 131963660963674779, guid: 46aa9be33693d43478bd8340e8d651d1,
+    type: 3}
   treeStartWoodCount: 15
 --- !u!54 &7522037115497801411
 Rigidbody:

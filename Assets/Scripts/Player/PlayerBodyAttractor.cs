@@ -11,8 +11,6 @@ public class PlayerBodyAttractor : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody>();
 
-        attractor = GetComponentInParent<FakeGravityAttractor>();
-
         rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
         rigidbody.useGravity = false;
     }
