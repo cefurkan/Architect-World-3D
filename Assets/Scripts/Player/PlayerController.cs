@@ -43,8 +43,8 @@ public class PlayerController : MonoBehaviour
     private void Move()
     {
         // Parmağı kaydırdığımız miktarda animasyon hızını ayarlamak için, aşağıdaki iki değer lazım.
-        float svermingSpeedz = direction.z * .003f;
-        float svermingSpeedx = direction.x * .003f;
+        float svermingSpeedz = direction.z * .006f;
+        float svermingSpeedx = direction.x * .006f;
         moveSpeed = 5f;
 
         if (Input.GetMouseButtonDown(0))

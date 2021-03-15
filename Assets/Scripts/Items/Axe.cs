@@ -83,11 +83,6 @@ public class Axe : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         PlayerController.Instance.anim.SetBool("Melee", false);
-
-        if (other.gameObject.GetComponentInParent<TreeManager>() == currentTree)
-        {
-            currentTree = null;
-        }
     }
 
     private void OnNearTree()
