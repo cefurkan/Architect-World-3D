@@ -73,7 +73,7 @@ public class Axe : MonoBehaviour
 
     private void OnTriggerStay(Collider other)
     {
-        if (currentTree != null)
+        if (currentTree != null && other.CompareTag("Tree"))
         {
             PlayerController.Instance.anim.SetBool("Melee", true);
         }
@@ -82,7 +82,10 @@ public class Axe : MonoBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        PlayerController.Instance.anim.SetBool("Melee", false);
+        if (other.CompareTag("Tree"))
+        {
+            PlayerController.Instance.anim.SetBool("Melee", false);
+        }
     }
 
     private void OnNearTree()

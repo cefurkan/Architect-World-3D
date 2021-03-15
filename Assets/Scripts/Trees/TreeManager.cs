@@ -30,7 +30,7 @@ public class TreeManager : MonoBehaviour
     {
         treeWoodCount = treeWoodCount - decreaseAmount;
         PlayerController.Instance.wood.amount += Mathf.RoundToInt(decreaseAmount);
-        Instantiate(logPrefab, logDropPosition.position, Quaternion.identity);
+        Instantiate(logPrefab, logDropPosition.position, Quaternion.identity,transform);
         Instantiate(leafParticle, transform.position, Quaternion.identity, transform);
         
 

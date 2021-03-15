@@ -5,13 +5,13 @@
 public class FakeGravityBody : MonoBehaviour
 {
     FakeGravityAttractor attractor;
-    private Rigidbody rigidbody;
+    Rigidbody rigidbody;
 
     private void Start()
     {
         rigidbody = GetComponent<Rigidbody>();
 
-        attractor = Resources.Load<FakeGravityAttractor>("Planet/Planet");
+        attractor = GetComponentInParent<FakeGravityAttractor>();
 
         rigidbody.constraints = RigidbodyConstraints.FreezeRotation;
         rigidbody.useGravity = false;
@@ -20,4 +20,6 @@ public class FakeGravityBody : MonoBehaviour
     {
         attractor.Attract(transform);
     }
+
+  
 }

@@ -24,7 +24,7 @@ public class PlayerController : MonoBehaviour
 
     public GameObject[] stackableLogs;
 
-    private float moveSpeed = 7.5f;
+    public float moveSpeed = 7.5f;
     private float range = 50f;
 
     void Start()
@@ -45,7 +45,6 @@ public class PlayerController : MonoBehaviour
         // Parmağı kaydırdığımız miktarda animasyon hızını ayarlamak için, aşağıdaki iki değer lazım.
         float svermingSpeedz = direction.z * .006f;
         float svermingSpeedx = direction.x * .006f;
-        moveSpeed = 5f;
 
         if (Input.GetMouseButtonDown(0))
         {
